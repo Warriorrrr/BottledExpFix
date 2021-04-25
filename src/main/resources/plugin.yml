@@ -1,0 +1,6 @@
+main: dev.warriorrr.bottledexpfix.BottledExpFix
+api-version: 1.16
+author: Warriorrr
+name: BottledExpFix
+prefix: BottledExpFix
+version: 1.0.0
