@@ -20,6 +20,6 @@ public class CommandListener implements Listener {
         }
 
         if (amountOrdered < 0)
-            event.setCancelled(true);
+            event.setMessage("/bottle store 0"); //Will cause bottledexp to send the standard usage message.
     }
 }
