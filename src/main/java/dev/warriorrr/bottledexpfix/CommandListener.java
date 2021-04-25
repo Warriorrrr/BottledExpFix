@@ -10,11 +10,10 @@ public class CommandListener implements Listener {
         if (!event.getMessage().startsWith("/bottle store"))
             return;
         
-        String[] message = event.getMessage().split(" ");
         int amountOrdered = 0;
 
         try {
-            amountOrdered = Integer.parseInt(message[2]);
+            amountOrdered = Integer.parseInt(event.getMessage().split(" ")[2]);
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;
         }
