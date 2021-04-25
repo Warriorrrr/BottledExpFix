@@ -5,19 +5,17 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class CommandListener implements Listener {
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         if (!event.getMessage().startsWith("/bottle store"))
             return;
         
         String[] message = event.getMessage().split(" ");
-        if (message.length < 3)
-            return;
-        
         int amountOrdered = 0;
+
         try {
             amountOrdered = Integer.parseInt(message[2]);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;
         }
 
