@@ -16,7 +16,7 @@ public class BottledExpFix extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         if (event.getMessage().startsWith("/bottle store max"))
             event.setMessage("/bottle store " + event.getPlayer().getLevel() + "L");
